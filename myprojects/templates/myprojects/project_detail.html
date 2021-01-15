@@ -1,0 +1,10 @@
+{% extends "myprojects/base.html" %}
+{% block content %}
+    <h1>{{object.title}}</h1>
+    <h3>{{object.description}}</h3>
+     {% for update in updates %}
+            <p>{{update.date_posted}}</p>
+            <p>{{update.details}}</p>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,7 +1,21 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import ProjectUpdate, Project
+from django.views.generic import DetailView
 
-
-# Create your views here.
+# home
 def index(request):
-    return render(request, 'myprojects/portfoliohome.html')
+    all_proj = Project.objects.all()
+    context = {
+        'projects': all_proj,
+    }
+    return render(request, 'myprojects/portfoliohome.html', context)
+
+class ProjectDetailView(DetailView):
+    model = Project
+    slug_url_kwarg = 'page_slug'
+    slug_field = 'slug'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        context["updates"]= ProjectUpdate.objects.filter(project=self.get_object())
+        return context
