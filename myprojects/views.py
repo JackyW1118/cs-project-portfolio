@@ -16,6 +16,5 @@ class ProjectDetailView(DetailView):
     slug_field = 'slug'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(context)
-        context["updates"]= ProjectUpdate.objects.filter(project=self.get_object())
+        context["updates"]= ProjectUpdate.objects.filter(project=self.get_object()).order_by('-date_posted')
         return context

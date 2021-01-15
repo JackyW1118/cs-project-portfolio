@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,8 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'myprojects/index.css' %}">
 
-    <title>Hello, world!</title>
+    <title>Django Portfolio</title>
   </head>
   <body>
     <header class="site-header">
@@ -28,9 +30,22 @@
         </div>
       </nav>
     </header>
-    <main role="main" class="container bg-main">
+    <main role="main" class="container-fluid">
         {% block content %}{% endblock %}
+        <legend class="border-bottom pb-8 my-5"></legend>
     </main>
+    <footer class="footer hero">
+      <div class="row">
+        <div class="h5 col-sm text-white pb-2 pt-5">
+            About
+        </div>
+      </div>
+      <div class="row">
+        <div class="h7 col-sm text-white pb-5">
+            Copyright
+        </div>
+      </div>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,0 +1,33 @@
+.hero{
+    background-color:  #1a8cff;
+    margin-left: calc(50% - 50vw);
+    width: 100vw;
+    text-align: center;
+}
+
+.text-wdith{
+    width: 60%;
+}
+
+.content-sec{
+    width: 100%;
+}
+
+.p{
+    display: block;
+}
+
+.row{
+    margin: 0 auto;
+}
+
+.col-sm{
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.img-thumbnail{
+    width: 270px;
+    height: 100%;
+}

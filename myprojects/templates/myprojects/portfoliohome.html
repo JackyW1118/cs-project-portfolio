@@ -1,4 +1,50 @@
 {% extends "myprojects/base.html" %}
 {% block content %}
-    <h1>Hello !</h1>
+    <div class="hero d-flex justify-content-center">
+        <p class="h4 text-white py-5 text-wdith my-5">
+            Hello everybody! This is Jiaqi (Jacky) Wang. I created this site to log and showcase my many computer science projects that I have completed and am currently working on!
+        </p>
+    </div>
+    <div class = "content-sec">
+        <div class="row">
+            <div class="h5 col-sm">
+                Projects
+            </div>
+          </div>
+          <div class="row">
+            <div class="h5 col-sm">
+                (Click on images to got to individual pages to see more details)
+            </div>
+          </div>
+          <div class="row">
+            <div class="h5 col-sm">
+                <a href="https://github.com/JackyW1118" class="btn btn-primary">github repo</a>
+            </div>         
+          </div>
+          <br class="mt-20">
+          <legend class="border-bottom mt-3"></legend>
+          <div class="row justify-content-md-center">            
+                {% for project in projects%}
+                <div class = "col-md-3">
+                    <div class="row">
+                        <div class="h5 col-sm">
+                            {{project.title}}
+                        </div>                      
+                    </div>
+                    <div class="row mt-3">
+                        <div class="h5 col-sm">
+                            <a href = "{% url 'project-detail' project.slug %}">
+                                <img  class="img-thumbnail" src="{{ project.front_image.url }}" alt="img">
+                            </a>
+                        </div>                      
+                    </div>
+                    <div class="row mt-3">
+                        <div class="h7 col-sm">
+                            {{project.short_description}}
+                        </div>                      
+                    </div>
+                </div>
+                {% endfor %}            
+          </div>
+    </div>
 {% endblock content %}

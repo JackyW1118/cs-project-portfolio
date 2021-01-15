@@ -4,11 +4,12 @@ from django.utils import timezone
 # each model is a project
 class Project(models.Model):
     title = models.CharField(max_length=100)
+    short_description = models.TextField(blank=True)
     description = models.TextField(verbose_name="Description")
     project_link = models.URLField(null=True, blank=True)
-    front_image = models.ImageField(upload_to='proj_frontimages',blank=True, verbose_name="Thumbnail")
+    front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
     technical_details = models.TextField(verbose_name="Technical Details", null=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
 
     def __str__(self):
         return self.title
