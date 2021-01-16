@@ -47,6 +47,7 @@ class MyInformation(models.Model):
     home_page_hero_text = models.TextField()
     about_page_description = models.TextField()
     phone_number = PhoneField()
+    email = models.EmailField()
 
     def clean(self):
         validate_only_one_instance(self)

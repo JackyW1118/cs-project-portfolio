@@ -8,19 +8,15 @@
 <div class="width-control set-height">
     <legend class="border-bottom my-2"></legend>
     <div>
-        Hello! I am Jiaqi (Jacky) Wang from Irvine, CA. 
-        I am currently a senior in Woodbridge High School. 
-        I moved to the U.S. from China when I was in 8th grade. 
-        During my free time, I love to code functional applications.
-        I created this portfolio to log my progess.
+        {{myinfo.about_page_description}}
     </div>
     
     <div class="row mt-5">
         <div class="col-sm">
-            <i class="fa fa-envelope"><a  class="ml-2" href="mailto:jacky200218@gmail.com">jacky200218@gmail.com</a></i>
+            <i class="fa fa-envelope"><a  class="ml-2" href="mailto:{{myinfo.email}}">{{myinfo.email}}</a></i>
         </div>
         <div class="col-sm">
-            <i class="fa fa-phone"><a  class="ml-2" href="tel:+1-949-351-0721">949-351-0721</a></i>
+            <i class="fa fa-phone"><a  class="ml-2" href="tel:{{myinfo.phone_number}}">{{myinfo.phone_number}}</a></i>
         </div>
     </div>
 </div>

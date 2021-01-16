@@ -1,13 +1,12 @@
 from django.shortcuts import render
-from .models import ProjectUpdate, Project
+from .models import ProjectUpdate, Project, MyInformation
 from django.views.generic import DetailView
 
 # home
 def index(request):
     all_proj = Project.objects.all().order_by('-date_posted')
-    context = {
-        'projects': all_proj,
-    }
+    context = {'projects': all_proj}
+    context["myinfo"] = MyInformation.objects.first()
     return render(request, 'myprojects/portfoliohome.html', context)
 
 class ProjectDetailView(DetailView):
@@ -23,4 +22,5 @@ class ProjectDetailView(DetailView):
 def about(request):
     context = dict()
     context["projects"] = Project.objects.all().order_by('-date_posted')
+    context["myinfo"] = MyInformation.objects.first()
     return render(request, 'myprojects/about.html', context=context)
