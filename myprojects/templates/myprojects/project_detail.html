@@ -33,7 +33,8 @@
     </div>
 {% endif %}
 {% for update in updates %}
-    <legend class="border-bottom my-2"></legend>
+<legend class="border-bottom my-2"></legend>
+<div class="width-control">
     <div class="row">
         <div class="h5 col-sm">
             {{update.date_posted.date}}
@@ -64,6 +65,8 @@
             </div>
         {% endif %}   
     </div>
+</div>
+    
 {% endfor %}
 
 {% endblock content %}
