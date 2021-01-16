@@ -21,4 +21,6 @@ class ProjectDetailView(DetailView):
         return context
 
 def about(request):
-    return render(request, 'myprojects/about.html')
+    context = dict()
+    context["projects"] = Project.objects.all().order_by('-date_posted')
+    return render(request, 'myprojects/about.html', context=context)

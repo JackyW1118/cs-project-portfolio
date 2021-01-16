@@ -25,11 +25,12 @@
                         <li>&#9642; {{item}}</li>
                     {% endfor %} 
                 </ul>
+            </div>          
+            {% if object.project_link %} 
+            <div class="h5 col-sm mb-5">             
+                    <a href="{{object.project_link}}" class="btn btn-primary">Link to Project</a>            
             </div>
-            
-            <div class="h5 col-sm mb-5">
-                <a href="{{object.project_link}}" class="btn btn-primary">Link to Project</a>
-            </div>
+            {% endif %}
         </div>
         {% if object.large_image %}
             <img  class="mb-5 img-large" src="{{ object.large_image.url }}" alt="img">
