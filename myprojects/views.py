@@ -4,7 +4,7 @@ from django.views.generic import DetailView
 
 # home
 def index(request):
-    all_proj = Project.objects.all()
+    all_proj = Project.objects.all().order_by('-date_posted')
     context = {
         'projects': all_proj,
     }
@@ -17,7 +17,7 @@ class ProjectDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["updates"]= ProjectUpdate.objects.filter(project=self.get_object()).order_by('-date_posted')
-        context["projects"] = Project.objects.all()
+        context["projects"] = Project.objects.all().order_by('-date_posted')
         return context
 
 def about(request):
