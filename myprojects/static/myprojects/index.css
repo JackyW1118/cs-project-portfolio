@@ -36,10 +36,13 @@
 
 .img-thumbnail{
     width: 270px;
-    height: 100%;
 }
 
 .width-control{
     width: 90%;
     margin: 0 auto;
+}
+
+.img-detail{
+    width: 350px;
 }

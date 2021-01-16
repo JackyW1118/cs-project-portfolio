@@ -1,5 +1,6 @@
 {% extends "myprojects/base.html" %}
 {% block content %}
+<div class="width-control">
     <div class="proj-hero d-flex justify-content-center">
         <br class="my-5">
         <h1 class="h1 text-white py-5 text-wdith my-5">
@@ -21,10 +22,11 @@
                 {{object.technical_details}}
             </div>
             <div class="h5 col-sm">
-                <img  class="img-thumbnail" src="{{ object.front_image.url }}" alt="img">
+                <img  class="img-detail" src="{{ object.front_image.url }}" alt="img">
             </div>
           </div>
     </div>  
+</div>
 {% if updates %}
     <div class="hero d-flex justify-content-center">
         <p class="h3 text-white text-wdith py-3">
@@ -46,17 +48,17 @@
         </div>        
         {% if update.first_image %}
             <div class="h5 col-sm">
-                <img  class="img-thumbnail" src="{{ update.first_image.url }}" alt="img">
+                <img  class="img-detail" src="{{ update.first_image.url }}" alt="img">
             </div>
         {% endif %}
         {% if update.second_image %}
             <div class="h5 col-sm">
-                <img  class="img-thumbnail" src="{{ update.second_image.url }}" alt="img">
+                <img  class="img-detail" src="{{ update.second_image.url }}" alt="img">
             </div>
         {% endif %}
         {% if update.third_image %}
             <div class="h5 col-sm">
-                <img  class="img-thumbnail" src="{{ update.third_image.url }}" alt="img">
+                <img  class="img-detail" src="{{ update.third_image.url }}" alt="img">
             </div>
         {% endif %}    
         {% if update.link %}
