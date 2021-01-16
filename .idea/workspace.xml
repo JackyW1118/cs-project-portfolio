@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myprojects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myprojects/static/myprojects/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/static/myprojects/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprojects/templates/myprojects/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/templates/myprojects/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprojects/templates/myprojects/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/templates/myprojects/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myprojects/templates/myprojects/project_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/templates/myprojects/project_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
