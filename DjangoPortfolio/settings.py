@@ -14,8 +14,18 @@ from pathlib import Path
 import os
 import json
 
-with open('/etc/config.json') as config_file:
-    config = json.load(config_file)
+try:
+    with open('/etc/config.json') as config_file:
+        config = json.load(config_file)
+        SECRET_KEY = config['SECRET_KEY']
+        AWS_ACCESS_KEY_ID = config.get('PORT_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = config.get('PORT_ACCESS_SECRET')
+        AWS_STORAGE_BUCKET_NAME = config.get('PORT_BUCKET')
+except FileNotFoundError:
+    SECRET_KEY = os.environ.get("PORT_SECRET_KEY")
+    AWS_ACCESS_KEY_ID = os.environ.get('PORT_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('PORT_ACCESS_SECRET')
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('PORT_BUCKET')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -25,12 +35,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.104.198.228','http://jiaqiwang1118.com/']
+ALLOWED_HOSTS = ['172.104.198.228', 'http://jiaqiwang1118.com/', '127.0.0.1']
 
 
 # Application definition
@@ -133,9 +142,7 @@ MEDIA_URL = '/media/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #S3 access
-AWS_ACCESS_KEY_ID = config.get('PORT_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config.get('PORT_ACCESS_SECRET')
-AWS_STORAGE_BUCKET_NAME = config.get('PORT_BUCKET')
+
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
