@@ -9,22 +9,26 @@
         <br class="my-5">
     </div>
     <div class = "content-sec">
-        <div class="row mt-5">
+        <div class="row my-5">
             <div class="h5 col-sm">
                 {{object.description}}
             </div>
             <div class="h5 col-sm">
-                <a href="{{object.project_link}}" class="btn btn-primary">Link to Project</a>
+                <img  class="img-main" src="{{ object.front_image.url }}" alt="img">
             </div>
           </div>
           <div class="row">
             <div class="h5 col-sm">
                 {{object.technical_details}}
             </div>
-            <div class="h5 col-sm">
-                <img  class="img-detail" src="{{ object.front_image.url }}" alt="img">
+            
+            <div class="h5 col-sm mb-5">
+                <a href="{{object.project_link}}" class="btn btn-primary">Link to Project</a>
             </div>
-          </div>
+        </div>
+        {% if object.large_image %}
+            <img  class="mb-5 img-large" src="{{ object.large_image.url }}" alt="img">
+        {% endif %}
     </div>  
 </div>
 {% if updates %}

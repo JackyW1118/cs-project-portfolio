@@ -46,3 +46,15 @@
 .img-detail{
     width: 350px;
 }
+
+.img-main{
+    width: 500px;
+}
+
+.img-large{
+    width: 85%;
+}
+
+.set-height{
+    height: 60vh;
+}
