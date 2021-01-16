@@ -14,18 +14,8 @@ from pathlib import Path
 import os
 import json
 
-try:
-    with open('/etc/config.json') as config_file:
-        config = json.load(config_file)
-        SECRET_KEY = config['SECRET_KEY']
-        AWS_ACCESS_KEY_ID = config.get('PORT_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = config.get('PORT_ACCESS_SECRET')
-        AWS_STORAGE_BUCKET_NAME = config.get('PORT_BUCKET')
-except FileNotFoundError:
-    SECRET_KEY = os.environ.get("PORT_SECRET_KEY")
-    AWS_ACCESS_KEY_ID = os.environ.get('PORT_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('PORT_ACCESS_SECRET')
-    AWS_STORAGE_BUCKET_NAME = os.environ.get('PORT_BUCKET')
+
+SECRET_KEY = os.environ.get("PORT_SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -146,3 +136,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ.get('PORT_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('PORT_ACCESS_SECRET')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('PORT_BUCKET')
