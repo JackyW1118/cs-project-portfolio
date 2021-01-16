@@ -1,10 +1,69 @@
 {% extends "myprojects/base.html" %}
 {% block content %}
-    <h1>{{object.title}}</h1>
-    <h3>{{object.description}}</h3>
-     {% for update in updates %}
-            <p>{{update.date_posted}}</p>
-            <p>{{update.details}}</p>
-    {% endfor %}
+    <div class="proj-hero d-flex justify-content-center">
+        <br class="my-5">
+        <h1 class="h1 text-white py-5 text-wdith my-5">
+           {{object.title}}
+        </h1>
+        <br class="my-5">
+    </div>
+    <div class = "content-sec">
+        <div class="row mt-5">
+            <div class="h5 col-sm">
+                {{object.description}}
+            </div>
+            <div class="h5 col-sm">
+                <a href="{{object.project_link}}" class="btn btn-primary">Link to Project</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="h5 col-sm">
+                {{object.technical_details}}
+            </div>
+            <div class="h5 col-sm">
+                <img  class="img-thumbnail" src="{{ object.front_image.url }}" alt="img">
+            </div>
+          </div>
+    </div>  
+{% if updates %}
+    <div class="hero d-flex justify-content-center">
+        <p class="h3 text-white text-wdith py-3">
+           Development Log
+        </p>
+    </div>
+{% endif %}
+{% for update in updates %}
+    <legend class="border-bottom my-2"></legend>
+    <div class="row">
+        <div class="h5 col-sm">
+            {{update.date_posted.date}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{update.details}}
+        </div>        
+        {% if update.first_image %}
+            <div class="h5 col-sm">
+                <img  class="img-thumbnail" src="{{ update.first_image.url }}" alt="img">
+            </div>
+        {% endif %}
+        {% if update.second_image %}
+            <div class="h5 col-sm">
+                <img  class="img-thumbnail" src="{{ update.second_image.url }}" alt="img">
+            </div>
+        {% endif %}
+        {% if update.third_image %}
+            <div class="h5 col-sm">
+                <img  class="img-thumbnail" src="{{ update.third_image.url }}" alt="img">
+            </div>
+        {% endif %}    
+        {% if update.link %}
+            <div class="h5 col-sm">
+                <a href="{{update.link}}" class="btn btn-primary">Link to Demo</a>
+            </div>
+        {% endif %}   
+    </div>
+{% endfor %}
 
 {% endblock content %}

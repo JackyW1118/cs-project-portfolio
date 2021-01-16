@@ -14,9 +14,9 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.slug = f"{self.title}".replace(' ','').lower()
-        super(Project, self).save()
+        super(Project, self).save(*args, **kwargs)
 
 class ProjectUpdate(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
@@ -29,5 +29,5 @@ class ProjectUpdate(models.Model):
     #relationship to Project model
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     def __str__(self):
-        return f"Update for {self.project.title} on {self.date_posted}"
+        return f"Update for {self.project.title} on {self.date_posted.date()}"
 

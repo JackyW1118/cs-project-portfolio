@@ -18,3 +18,6 @@ class ProjectDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["updates"]= ProjectUpdate.objects.filter(project=self.get_object()).order_by('-date_posted')
         return context
+
+def about(request):
+    return render(request, 'myprojects/about.html')
