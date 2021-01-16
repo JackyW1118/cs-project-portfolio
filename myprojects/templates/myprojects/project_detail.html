@@ -10,16 +10,21 @@
     </div>
     <div class = "content-sec">
         <div class="row my-5">
-            <div class="h5 col-sm">
+            <div class="col-sm">
                 {{object.description}}
             </div>
-            <div class="h5 col-sm">
+            <div class="col-sm">
                 <img  class="img-main" src="{{ object.front_image.url }}" alt="img">
             </div>
           </div>
           <div class="row">
-            <div class="h5 col-sm">
-                {{object.technical_details}}
+            <div class="col-sm">
+                <h5>Technology Used: </h5>
+                <ul class="list-unstyled">
+                    {% for item in object.tech_as_list %}
+                        <li>&#9642; {{item}}</li>
+                    {% endfor %} 
+                </ul>
             </div>
             
             <div class="h5 col-sm mb-5">
@@ -72,7 +77,6 @@
         {% endif %}   
     </div>
 </div>
-    
 {% endfor %}
 
 {% endblock content %}

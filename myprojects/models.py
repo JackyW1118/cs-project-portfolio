@@ -10,7 +10,7 @@ class Project(models.Model):
     project_link = models.URLField(null=True, blank=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
     large_image = models.ImageField(upload_to='proj_frontimages', blank=True)
-    technical_details = models.TextField(verbose_name="Technical Details", null=True)
+    technical_details = models.TextField(verbose_name="Technical Details (split by line)", null=True)
     slug = models.SlugField(unique=True, blank=True)
     def __str__(self):
         return self.title
@@ -19,6 +19,9 @@ class Project(models.Model):
         if self.slug is None:
             self.slug = f"{self.title}".replace(' ','').lower()
         super(Project, self).save(*args, **kwargs)
+
+    def tech_as_list(self):
+        return f"{self.technical_details}".split('\n')
 
 class ProjectUpdate(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
