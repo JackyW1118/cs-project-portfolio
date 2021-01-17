@@ -3,17 +3,19 @@ from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 
-# each model is a project
+# each instance is a project displayed in a new page
 class Project(models.Model):
     title = models.CharField(max_length=100)
     date_posted = models.DateTimeField(default=timezone.now, null=True)
     short_description = models.TextField(blank=True)
     description = models.TextField(verbose_name="Description")
+    key_features = models.TextField(verbose_name="Key Features (split by line)", null=True)
     project_link = models.URLField(blank=True, null=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
     large_image = models.ImageField(upload_to='proj_frontimages', blank=True)
     technical_details = models.TextField(verbose_name="Technical Details (split by line)", null=True)
     slug = models.SlugField(unique=True, blank=True)
+
     def __str__(self):
         return self.title
 
@@ -25,6 +27,10 @@ class Project(models.Model):
     def tech_as_list(self):
         return f"{self.technical_details}".split('\n')
 
+    def features_as_list(self):
+        return f"{self.key_features}".split('\n')
+
+# each instance is a daily update stored under devlopment log
 class ProjectUpdate(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     details = models.TextField()
