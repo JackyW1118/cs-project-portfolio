@@ -1,13 +1,13 @@
 {% extends "myprojects/base.html" %}
 {% block content %}
+<div class="proj-hero d-flex justify-content-center">
+    <br class="my-5">
+    <h1 class="h1 text-white py-5 text-wdith my-5">
+       {{object.title}}
+    </h1>
+    <br class="my-5">
+</div>
 <div class="width-control">
-    <div class="proj-hero d-flex justify-content-center">
-        <br class="my-5">
-        <h1 class="h1 text-white py-5 text-wdith my-5">
-           {{object.title}}
-        </h1>
-        <br class="my-5">
-    </div>
     <div class = "content-sec">
         <div class="row my-5">
             <div class="col-sm">
@@ -45,7 +45,7 @@
     </div>
 {% endif %}
 {% for update in updates %}
-<legend class="border-bottom my-2"></legend>
+<legend class="border-bottom my-3"></legend>
 <div class="width-control">
     <div class="row">
         <div class="h5 col-sm">

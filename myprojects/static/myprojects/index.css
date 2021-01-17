@@ -8,16 +8,18 @@
     }
 }
 
+.container-fluid{
+    padding: 0;
+ }
+
 .hero{
     background-color:  #1a8cff;
-    margin-left: calc(50% - 50vw);
-    width: 100vw;
     text-align: center;
+    width: 100%;
 }
+
 .proj-hero{
     background-color:  #1a8cff;
-    margin-left: calc(50% - 50vw);
-    width: 100vw;
     text-align: center;
     height: 250px;
 }
