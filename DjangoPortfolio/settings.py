@@ -35,10 +35,9 @@ ALLOWED_HOSTS = ['django-cs-portfolio.herokuapp.com/', 'www.jiaqiwang1118.com/']
 # Application definition
 
 INSTALLED_APPS = [
-    'myprojects.apps.MyprojectsConfig',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
+    'myprojects.apps.MyprojectsConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
