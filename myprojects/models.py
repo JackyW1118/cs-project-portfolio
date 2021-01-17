@@ -18,7 +18,7 @@ class Project(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        if self.slug is None:
+        if self.slug is None or self.slug == "":
             self.slug = f"{self.title}".replace(' ','').lower()
         super(Project, self).save(*args, **kwargs)
 
