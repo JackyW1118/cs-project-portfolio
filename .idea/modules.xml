@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DjangoPortfolio.iml" filepath="$PROJECT_DIR$/.idea/DjangoPortfolio.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../whsclubmanager/.idea/whsclubmanager.iml" filepath="$PROJECT_DIR$/../whsclubmanager/.idea/whsclubmanager.iml" />
     </modules>
   </component>
 </project>

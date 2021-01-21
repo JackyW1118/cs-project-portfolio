@@ -2,6 +2,14 @@ from django.contrib import admin
 from .models import Project, ProjectUpdate, MyInformation
 from django.contrib.auth.models import Group
 
+class ProjectUpdateInline(admin.StackedInline):
+    model = ProjectUpdate
+    extra = 0
+
+class ProjectAdmin(admin.ModelAdmin):
+    inlines = [ProjectUpdateInline]
+
+'''
 class ProjectListFilter(admin.SimpleListFilter):
     title = 'Projects'
     parameter_name = 'project'
@@ -34,10 +42,11 @@ class ProjectUpdateAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'project', )
     list_filter = (ProjectListFilter, )
 
-
+'''
 # Register your models here.
 admin.site.site_header = "Portfolio Editor"
-admin.site.register(Project)
-admin.site.register(ProjectUpdate, ProjectUpdateAdmin)
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(ProjectUpdate)
 admin.site.register(MyInformation)
 admin.site.unregister(Group)
+admin.site.unregister(ProjectUpdate)

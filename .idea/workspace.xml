@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0411326c-dd30-4851-835e-79d0a40c07ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DjangoPortfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoPortfolio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoPortfolio/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoPortfolio/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprojects/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +181,7 @@
       <recent name="D:\DjangoPortfolio" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: env">
+  <component name="RunManager" selected="Python.manage">
     <configuration name="Test: env" type="DjangoTestsConfigurationType" temporary="true">
       <module name="whsclubmanager" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -241,7 +243,9 @@
       <option name="presentableId" value="Default" />
       <updated>1610686453512</updated>
       <workItem from="1611022299598" duration="3667000" />
-      <workItem from="1611101249591" duration="1031000" />
+      <workItem from="1611101249591" duration="2387000" />
+      <workItem from="1611258472509" duration="1124000" />
+      <workItem from="1611259629718" duration="761000" />
     </task>
     <servers />
   </component>
