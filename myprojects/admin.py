@@ -46,7 +46,5 @@ class ProjectUpdateAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.site_header = "Portfolio Editor"
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(ProjectUpdate)
 admin.site.register(MyInformation)
 admin.site.unregister(Group)
-admin.site.unregister(ProjectUpdate)
