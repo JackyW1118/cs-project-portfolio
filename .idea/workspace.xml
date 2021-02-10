@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0411326c-dd30-4851-835e-79d0a40c07ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoPortfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoPortfolio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myprojects/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myprojects/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../djangoBlog/.idea/djangoBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/.idea/djangoBlog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../djangoBlog/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../djangoBlog/blog/templates/blog/post_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/blog/templates/blog/post_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../djangoBlog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/blog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +247,11 @@
       <workItem from="1611101249591" duration="2387000" />
       <workItem from="1611258472509" duration="1124000" />
       <workItem from="1611259629718" duration="761000" />
+      <workItem from="1611260832631" duration="1638000" />
+      <workItem from="1611613127465" duration="1412000" />
+      <workItem from="1611620905760" duration="9000" />
+      <workItem from="1611869275845" duration="25000" />
+      <workItem from="1611889057797" duration="1661000" />
     </task>
     <servers />
   </component>
