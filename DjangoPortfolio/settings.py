@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'myprojects.apps.MyprojectsConfig',
+    'frontend.apps.FrontendConfig',
     'api.apps.ApiConfig',
     'rest_framework',
     'django.contrib.contenttypes',
