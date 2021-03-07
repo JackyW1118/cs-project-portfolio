@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0411326c-dd30-4851-835e-79d0a40c07ec" name="Default Changelist" comment="react integration">
+      <change afterPath="$PROJECT_DIR$/frontend/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/babel.config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoPortfolio/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoPortfolio/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +257,7 @@
       <workItem from="1611889057797" duration="1661000" />
       <workItem from="1613001004690" duration="712000" />
       <workItem from="1614922884136" duration="848000" />
-      <workItem from="1614925904365" duration="15527000" />
+      <workItem from="1614925904365" duration="17645000" />
     </task>
     <task id="LOCAL-00001" summary="react integration">
       <created>1615016542041</created>

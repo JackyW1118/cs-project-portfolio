@@ -14,6 +14,21 @@ from pathlib import Path
 import django_heroku
 import os
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
 
 SECRET_KEY = os.environ.get("PORT_SECRET_KEY")
 
@@ -27,10 +42,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+#DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = False
 SECURE_SSL_REDIRECT = (os.environ.get('SECURE_SSL_REDIRECT') == 'True')
 
-ALLOWED_HOSTS = ['django-cs-portfolio.herokuapp.com/', 'www.jiaqiwang1118.com/']
+ALLOWED_HOSTS = ['django-cs-portfolio.herokuapp.com/', 'https://www.jackywang.us/', 'http://127.0.0.1:8000/']
 
 
 # Application definition
