@@ -8,7 +8,6 @@ const Card = () => {
     const search = async () => {
       const { data } = await axios.get("api/myinfo");
       setMyInfo(data);
-      console.log(data);
     };
     search();
   }, []);

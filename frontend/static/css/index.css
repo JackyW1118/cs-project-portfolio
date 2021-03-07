@@ -11,10 +11,12 @@ a {
   color: inherit !important;
 }
 
-/* Card */
+/* Person Card */
 .card-wrap {
   margin-top: 50px;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .width-control {
@@ -27,4 +29,54 @@ a {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+.float-up {
+  margin-top: -170px;
+}
+
+/* Project */
+.proj-card {
+  height: 300px !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.proj-card:hover .proj-short {
+  visibility: visible;
+  opacity: 1;
+}
+
+div.tech-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.proj-short {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: inherit;
+  background: rgba(165, 165, 165, 0.9);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+/* Nav Footer*/
+.jumbotron {
+  width: 100% !important;
+  background-color: gray;
+}
+
+/* Footer */
+div.footer {
+  margin: 0px;
 }

@@ -9,11 +9,11 @@ class Project(models.Model):
     date_posted = models.DateTimeField(default=timezone.now, null=True)
     short_description = models.TextField(blank=True)
     description = models.TextField(verbose_name="Description")
-    key_features = models.TextField(verbose_name="Key Features (split by line)", null=True)
+    key_features = models.TextField(verbose_name="Key Features (split by /)", null=True)
     project_link = models.URLField(blank=True, null=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
     large_image = models.ImageField(upload_to='proj_frontimages', blank=True)
-    technical_details = models.TextField(verbose_name="Technical Details (split by line)", null=True)
+    technical_details = models.TextField(verbose_name="Technical Details (split by /)", null=True)
     slug = models.SlugField(unique=True, blank=True)
 
     def __str__(self):
