@@ -25,7 +25,7 @@ urlpatterns = [
     # home page
     path('', include('myprojects.urls')),
     #api endpoints
-    path('api/', include('api.urls'))
+    path('new/api/', include('api.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -50,10 +50,18 @@ def validate_only_one_instance(obj):
         raise ValidationError("Can only create 1 %s instance" % model.__name__)
 
 class MyInformation(models.Model):
+    name = models.CharField(max_length=20)
     home_page_hero_text = models.TextField()
     about_page_description = models.TextField()
     phone_number = PhoneField()
     email = models.EmailField()
+    current_role = models.CharField(max_length=50, null=True)
+    location = models.CharField(max_length=50, null=True)
+    linkedin_url = models.URLField(null=True, blank=True)
+    github_url = models.URLField(null=True, blank=True)
+    tech_stack = models.TextField(verbose_name="Stack (split by /)", null=True)
+    resume_link = models.URLField(null=True, blank=True)
+    my_photo = models.ImageField(upload_to='profile', blank=True)
 
     def clean(self):
         validate_only_one_instance(self)

@@ -42,8 +42,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG = False
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+
 SECURE_SSL_REDIRECT = (os.environ.get('SECURE_SSL_REDIRECT') == 'True')
 
 ALLOWED_HOSTS = ['django-cs-portfolio.herokuapp.com/', 'https://www.jackywang.us/', 'http://127.0.0.1:8000/']
