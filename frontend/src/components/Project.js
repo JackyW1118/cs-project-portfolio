@@ -9,7 +9,7 @@ const Project = ({ proj }) => {
     );
   });
   return (
-    <div className="col-md-6 mb-3">
+    <div className="">
       <div
         className="card proj-card"
         style={{
