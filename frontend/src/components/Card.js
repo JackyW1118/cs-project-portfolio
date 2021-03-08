@@ -6,7 +6,7 @@ const Card = () => {
 
   useEffect(() => {
     const search = async () => {
-      const { data } = await axios.get("api/myinfo");
+      const { data } = await axios.get("/api/myinfo");
       setMyInfo(data);
     };
     search();
@@ -14,9 +14,7 @@ const Card = () => {
 
   const renderedTechs = myInfo.tech_stack.split("/").map((stack) => {
     return (
-      <span className="badge badge-pill badge-secondary mr-2 mb-1">
-        {stack}
-      </span>
+      <span className="badge badge-pill badge-primary mr-2 mb-1">{stack}</span>
     );
   });
 

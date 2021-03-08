@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nav = ({ project }) => {
+const Hero = ({ project }) => {
   const heroText = project;
   return (
     <div class="jumbotron jumbotron-fluid">
@@ -15,4 +15,4 @@ const Nav = ({ project }) => {
   );
 };
 
-export default Nav;
+export default Hero;

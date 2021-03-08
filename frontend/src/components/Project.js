@@ -3,13 +3,11 @@ import React from "react";
 const Project = ({ proj }) => {
   const renderedTechs = proj.technical_details.split("/").map((stack) => {
     return (
-      <span className="badge badge-pill badge-secondary mr-2 mb-1">
-        {stack}
-      </span>
+      <span className="badge badge-pill badge-primary mr-2 mb-1">{stack}</span>
     );
   });
   return (
-    <div className="">
+    <div>
       <div
         className="card proj-card"
         style={{
