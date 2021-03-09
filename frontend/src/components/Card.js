@@ -61,14 +61,14 @@ const Card = () => {
                 style={{ fontSize: "18px" }}
                 href={`tel:${myInfo.phone_number}`}
                 data-toggle="tooltip"
-                title="Phone Number"
+                title={myInfo.phone_number}
               ></a>
               <a
                 class="fa fa-envelope"
                 style={{ fontSize: "17px" }}
                 href={`mailto:${myInfo.email}`}
                 data-toggle="tooltip"
-                title="Email Address"
+                title={myInfo.email}
               ></a>
             </div>
             <hr />

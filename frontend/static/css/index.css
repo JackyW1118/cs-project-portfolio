@@ -14,7 +14,7 @@ a {
 
 /* Person Card */
 .card-wrap {
-  margin-top: 50px;
+  margin-top: 70px;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -60,10 +60,9 @@ div.tech-list {
 .proj-short {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  height: inherit;
+  height: 100%;
+  width: 100%;
   background: rgba(26, 140, 255, 0.7);
   color: #fff;
   visibility: hidden;
@@ -74,12 +73,35 @@ div.tech-list {
 /* Nav Footer*/
 .jumbotron {
   width: 100% !important;
+  height: 150px;
   background-color: #1a8cff;
 }
 
 /* Footer */
 div.footer {
   margin: 0px;
+}
+
+/*scrollToTopBtn*/
+
+#upBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  outline: none;
+  background-color: #5daaf7;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  border-radius: 50%;
+}
+
+#upBtn:hover {
+  background-color: #1a8cff;
 }
 
 /*ProjectDetail */
@@ -95,4 +117,38 @@ div.detail-row {
 
 .img-main {
   max-width: 100%;
+}
+
+/*ProjectFeatureList*/
+.img-feature {
+  width: 20px !important;
+  height: auto;
+}
+
+.feature-hero {
+  margin: 0px;
+  padding: 0px;
+  width: 100% !important;
+  background-color: #1a8cff;
+  color: white;
+}
+
+/*returnHomeBtn*/
+#homeBtn {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 99;
+  font-size: 18px;
+  outline: none;
+  background-color: #5daaf7;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  border-radius: 50%;
+}
+
+#homeBtn:hover {
+  background-color: #1a8cff;
 }

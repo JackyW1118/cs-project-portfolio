@@ -11,6 +11,7 @@ class Project(models.Model):
     description = models.TextField(verbose_name="Description")
     key_features = models.TextField(verbose_name="Key Features (split by /)", null=True)
     project_link = models.URLField(blank=True, null=True)
+    github_url = models.URLField(blank=True, null=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
     large_image = models.ImageField(upload_to='proj_frontimages', blank=True)
     technical_details = models.TextField(verbose_name="Technical Details (split by /)", null=True)
@@ -43,6 +44,17 @@ class ProjectUpdate(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     def __str__(self):
         return f"Update for {self.project.title} on {self.date_posted.date()}"
+
+class ProjectFeatureList(models.Model):
+    feature_title = models.CharField(max_length=50)
+    feature_detail = models.TextField()
+    feature_image = models.ImageField(upload_to='feature_images',blank=True)
+
+    # relationship to Project model
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Feature for {self.project.title}"
 
 def validate_only_one_instance(obj):
     model = obj.__class__

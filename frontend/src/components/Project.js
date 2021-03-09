@@ -9,7 +9,7 @@ const Project = ({ proj }) => {
   return (
     <div>
       <div
-        className="card proj-card"
+        className="card proj-card shadow bg-white rounded"
         style={{
           backgroundImage: `url(${proj.front_image})`,
         }}

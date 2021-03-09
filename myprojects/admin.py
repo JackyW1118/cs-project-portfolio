@@ -1,13 +1,17 @@
 from django.contrib import admin
-from .models import Project, ProjectUpdate, MyInformation
+from .models import Project, ProjectUpdate, MyInformation, ProjectFeatureList
 from django.contrib.auth.models import Group
 
 class ProjectUpdateInline(admin.StackedInline):
     model = ProjectUpdate
     extra = 0
 
+class ProjectFeatureListInline(admin.TabularInline):
+    model = ProjectFeatureList
+    extra = 0
+
 class ProjectAdmin(admin.ModelAdmin):
-    inlines = [ProjectUpdateInline]
+    inlines = [ProjectFeatureListInline, ProjectUpdateInline]
 
 '''
 class ProjectListFilter(admin.SimpleListFilter):

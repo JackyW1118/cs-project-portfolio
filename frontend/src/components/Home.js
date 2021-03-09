@@ -16,19 +16,21 @@ const Home = () => {
   }, []);
 
   return (
-    <React.Fragment>
-      <div className="row">
-        <Hero />
-      </div>
-      <div className="row">
-        <div class="col-md-3 mb-3 float-up">
-          <Card />
+    <div style={{ backgroundColor: "#f2f2f2" }} className="row">
+      <div className="col">
+        <div className="row">
+          <Hero />
         </div>
-        <div class="col-sm">
-          <ProjectList projects={projects} />
+        <div className="row">
+          <div class="col-md-3 mb-3 float-up">
+            <Card />
+          </div>
+          <div class="col-md">
+            <ProjectList projects={projects} />
+          </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
