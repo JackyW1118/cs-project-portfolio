@@ -15,9 +15,7 @@ const App = () => {
         <Switch>
           <Route path="/:slug" exact component={ProjectDetail}></Route>
         </Switch>
-        <div className="row">
-          <Footer />
-        </div>
+        <Footer />
       </Router>
       <ScrollToTopBtn />
     </React.Fragment>

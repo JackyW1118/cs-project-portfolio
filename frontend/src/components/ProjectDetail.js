@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Hero from "./Hero";
 import ProjectFeatureList from "./ProjectFeatureList";
+import CodeSampleList from "./CodeSampleList";
 import ReturnHomeBtn from "./ReturnHomeBtn";
 
 const ProjectDetail = ({ match }) => {
@@ -22,13 +23,16 @@ const ProjectDetail = ({ match }) => {
     getProject();
   }, []);
 
-  const renderedKeyFeatures = keyFeatures.map(({ feature_title }) => {
+  const renderedKeyFeatures = keyFeatures.map(({ feature_title }, index) => {
     return (
       <a
         href={`#${feature_title}`}
-        class="list-group-item list-group-item-action"
+        class="btn badge badge-pill badge-primary mb-2 py-0"
       >
-        {feature_title}
+        <h6 className="py-0 my-1">
+          <a class="badge badge-pill badge-info mr-1 py-1 my-1">{++index}</a>
+          {feature_title}
+        </h6>
       </a>
     );
   });
@@ -58,10 +62,10 @@ const ProjectDetail = ({ match }) => {
           </div>
           <div className="row my-5">
             <div className="col-sm">
-              <h5>Key Features: </h5>
+              <h5>Feature Links: </h5>
               <div
-                class="list-group list-group-flush"
-                style={{ width: "50%", margin: "auto" }}
+                class="d-flex flex-column"
+                style={{ width: "min-content", margin: "auto" }}
               >
                 {renderedKeyFeatures}
               </div>
@@ -116,6 +120,11 @@ const ProjectDetail = ({ match }) => {
             proj_pk={project.id}
             setKeyFeatures={setKeyFeatures}
           />
+        </div>
+      </div>
+      <div className="row detail-row">
+        <div className="col" style={{ padding: "0" }}>
+          <CodeSampleList proj_pk={project.id} />
         </div>
       </div>
     </React.Fragment>

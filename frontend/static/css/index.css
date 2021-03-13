@@ -14,7 +14,7 @@ a {
 
 /* Person Card */
 .card-wrap {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -25,15 +25,16 @@ a {
 }
 
 .rounded-circle {
-  margin-top: -40px;
-  width: 60%;
+  margin-top: -60px;
+  width: 50%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Home */
 .float-up {
-  margin-top: -170px;
+  margin-top: -140px;
 }
 
 /* Project */

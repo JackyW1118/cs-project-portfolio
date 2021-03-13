@@ -22,7 +22,7 @@ const Card = () => {
     <div className="card-wrap">
       <div className="card">
         <img
-          className="rounded-circle center-block border border-white"
+          className="rounded-circle center-block"
           src={myInfo.my_photo}
           alt="profle photo"
         ></img>

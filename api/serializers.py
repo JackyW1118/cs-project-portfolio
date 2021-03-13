@@ -1,5 +1,5 @@
-from rest_framework import routers, serializers, viewsets
-from myprojects.models import Project, ProjectUpdate, MyInformation, ProjectFeatureList
+from rest_framework import serializers
+from myprojects.models import Project, ProjectUpdate, MyInformation, ProjectFeatureList, CodeSample
 
 # Create your views here.
 class ProjectSerializer(serializers.ModelSerializer):
@@ -20,4 +20,9 @@ class ProjectFeatureListSerializer(serializers.ModelSerializer):
 class MyInformationSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyInformation
+        fields = '__all__'
+
+class CodeSampleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CodeSample
         fields = '__all__'

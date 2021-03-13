@@ -77,3 +77,11 @@ class MyInformation(models.Model):
 
     def clean(self):
         validate_only_one_instance(self)
+
+class CodeSample(models.Model):
+    sample_name = models.CharField(max_length=50)
+    sample_text = models.TextField()
+    github_gist_id = models.CharField(max_length=100)
+    feature_image = models.ImageField(null=True, upload_to='code sample')
+    # relationship to Project model
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
