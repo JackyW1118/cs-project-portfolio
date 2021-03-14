@@ -21,11 +21,13 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
+    path('archive/', include('myprojects.urls')),
     # api endpoints
     re_path(r'^api/', include('api.urls')),
     # route all other to react
     path(r'', TemplateView.as_view(template_name='frontend/index.html')),
     re_path(r'^(?!api).+/', TemplateView.as_view(template_name='frontend/index.html')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

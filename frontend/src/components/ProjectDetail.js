@@ -53,15 +53,15 @@ const ProjectDetail = ({ match }) => {
         className="row justify-content-center detail-row"
         style={{ width: "90%", margin: "auto" }}
       >
-        <div className="col-sm">
+        <div className="col-md">
           <div className="row">
-            <div className="col-sm">
+            <div className="col-md">
               <h5>Details: </h5>
               {project.description}
             </div>
           </div>
           <div className="row my-5">
-            <div className="col-sm">
+            <div className="col-md">
               <h5>Feature Links: </h5>
               <div
                 class="d-flex flex-column"
@@ -72,7 +72,7 @@ const ProjectDetail = ({ match }) => {
             </div>
           </div>
           <div className="row mt-2">
-            <div className="col-sm">
+            <div className="col-md">
               <h5>Technology Used: </h5>
               <div
                 class="d-flex flex-wrap justify-content-center"
@@ -83,9 +83,9 @@ const ProjectDetail = ({ match }) => {
             </div>
           </div>
         </div>
-        <div className="col-sm">
+        <div className="col-md">
           <div className="row">
-            <div className="col-sm">
+            <div className="col-md">
               <img
                 className="img-main shadow p-3 mb-5 bg-white rounded"
                 src={project.front_image}
@@ -96,7 +96,7 @@ const ProjectDetail = ({ match }) => {
         </div>
       </div>
       <div className="row detail-row">
-        <div className="h5 col-sm mb-5">
+        <div className="h5 col-md mb-5">
           <a
             href={project.project_link}
             className="btn btn-primary mr-3"

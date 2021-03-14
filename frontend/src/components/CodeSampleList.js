@@ -25,10 +25,10 @@ const CodeSampleList = ({ proj_pk }) => {
           <p className="p">{sample.sample_text}</p>
         </div>
         <div className="row">
-          <div className="col-sm" id={sample.id}>
+          <div className="col-md" id={sample.id}>
             <Gist id={sample.github_gist_id} />
           </div>
-          <div className="col-sm">
+          <div className="col-md">
             <img
               className="img-fluid shadow p-1 mb-5 bg-white"
               src={sample.feature_image}

@@ -22,10 +22,10 @@ const ProjectFeatureList = ({ proj_pk, setKeyFeatures }) => {
           <h4>{feature.feature_title}</h4>
         </div>
         <div className="row">
-          <div className="col-sm">
+          <div className="col-md">
             <p className="p">{feature.feature_detail}</p>
           </div>
-          <div className="col-sm">
+          <div className="col-md">
             <img
               className="img-fluid shadow p-1 mb-5 bg-white"
               src={feature.feature_image}
