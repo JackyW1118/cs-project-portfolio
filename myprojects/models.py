@@ -5,6 +5,9 @@ from django.core.exceptions import ValidationError
 
 # each instance is a project displayed in a new page
 class Project(models.Model):
+    visible = models.BooleanField(default=True)
+    feature_list_visible = models.BooleanField(default=True)
+    code_sample_visible = models.BooleanField(default=True)
     title = models.CharField(max_length=100)
     date_posted = models.DateTimeField(default=timezone.now, null=True)
     short_description = models.TextField(blank=True)

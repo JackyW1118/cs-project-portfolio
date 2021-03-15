@@ -7,22 +7,19 @@ const Project = ({ proj }) => {
     );
   });
   return (
-    <div>
+    <div className="card proj-card shadow proj-outer-card">
+      <h4 className="card-title mt-2 ml-2">{proj.title}</h4>
+      <div className="tech-list">
+        <div class="d-flex flex-wrap ml-2">{renderedTechs}</div>
+      </div>
       <div
-        className="card proj-card shadow bg-white rounded"
+        className="inner-card"
         style={{
           backgroundImage: `url(${proj.front_image})`,
         }}
       >
-        <div class="proj-short card proj-card d-flex flex-column">
-          <h4 className="card-title mt-2 ml-2">{proj.title}</h4>
-          <p className="card-text align-self-center" style={{ margin: "auto" }}>
-            {proj.short_description}
-          </p>
-        </div>
-        <h4 className="card-title mt-2 ml-2">{proj.title}</h4>
-        <div className="tech-list">
-          <div class="d-flex flex-wrap ml-2">{renderedTechs}</div>
+        <div class="proj-short d-flex flex-column">
+          <p className="p my-auto mx-auto w-75">{proj.short_description}</p>
         </div>
       </div>
     </div>

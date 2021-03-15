@@ -23,17 +23,11 @@ const ProjectDetail = ({ match }) => {
     getProject();
   }, []);
 
-  const renderedKeyFeatures = keyFeatures.map(({ feature_title }, index) => {
+  const renderedKeyFeatures = keyFeatures.map(({ feature_title }) => {
     return (
-      <a
-        href={`#${feature_title}`}
-        class="btn badge badge-pill badge-primary mb-2 py-0"
-      >
-        <h6 className="py-0 my-1">
-          <a class="badge badge-pill badge-info mr-1 py-1 my-1">{++index}</a>
-          {feature_title}
-        </h6>
-      </a>
+      <li className="mb-2">
+        <a href={`#${feature_title}`}>{feature_title}</a>
+      </li>
     );
   });
 
@@ -63,12 +57,7 @@ const ProjectDetail = ({ match }) => {
           <div className="row my-5">
             <div className="col-md">
               <h5>Feature Links: </h5>
-              <div
-                class="d-flex flex-column"
-                style={{ width: "min-content", margin: "auto" }}
-              >
-                {renderedKeyFeatures}
-              </div>
+              <ol className="rounded-list">{renderedKeyFeatures}</ol>
             </div>
           </div>
           <div className="row mt-2">
@@ -116,15 +105,19 @@ const ProjectDetail = ({ match }) => {
       </div>
       <div className="row detail-row">
         <div className="col" style={{ padding: "0" }}>
-          <ProjectFeatureList
-            proj_pk={project.id}
-            setKeyFeatures={setKeyFeatures}
-          />
+          {project.feature_list_visible ? (
+            <ProjectFeatureList
+              proj_pk={project.id}
+              setKeyFeatures={setKeyFeatures}
+            />
+          ) : null}
         </div>
       </div>
       <div className="row detail-row">
         <div className="col" style={{ padding: "0" }}>
-          <CodeSampleList proj_pk={project.id} />
+          {project.code_sample_visible ? (
+            <CodeSampleList proj_pk={project.id} />
+          ) : null}
         </div>
       </div>
     </React.Fragment>
