@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div style={{ backgroundColor: "#f2f2f2" }} className="row">
-      <div className="col">
+      <div className="col mb-5">
         <div className="row">
           <Hero />
         </div>

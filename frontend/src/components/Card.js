@@ -14,7 +14,9 @@ const Card = () => {
 
   const renderedTechs = myInfo.tech_stack.split("/").map((stack) => {
     return (
-      <span className="badge badge-pill badge-primary mr-2 mb-1">{stack}</span>
+      <span className="badge badge-pill badge-secondary mr-2 mb-1">
+        {stack}
+      </span>
     );
   });
 
@@ -39,6 +41,8 @@ const Card = () => {
                 href={myInfo.github_url}
                 data-toggle="tooltip"
                 title="Github Repo"
+                target="_blank"
+                rel="noopener noreferrer"
               ></a>
               <a
                 class="fa fa-linkedin mr-3"
@@ -46,6 +50,8 @@ const Card = () => {
                 href={myInfo.linkedin_url}
                 data-toggle="tooltip"
                 title="Linkedin Profile"
+                target="_blank"
+                rel="noopener noreferrer"
               ></a>
               <a
                 class="fa fa-file-text"
@@ -53,6 +59,8 @@ const Card = () => {
                 href={myInfo.resume_link}
                 data-toggle="tooltip"
                 title="Resume"
+                target="_blank"
+                rel="noopener noreferrer"
               ></a>
             </div>
             <div class="d-flex flex-row justify-content-center">

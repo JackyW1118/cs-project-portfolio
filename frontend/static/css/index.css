@@ -3,7 +3,7 @@ hr {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #1a8cff;
+  background-color: #5daaf7;
   height: 1px;
 }
 
@@ -71,7 +71,7 @@ ol ol {
 }
 
 .proj-outer-card {
-  background-color: rgba(26, 140, 255);
+  background-color: #5daaf7;
   color: white;
 }
 
@@ -89,7 +89,7 @@ div.tech-list {
 .proj-short {
   height: 100%;
   width: 100%;
-  background: rgba(26, 140, 255, 0.9);
+  background: rgba(93, 170, 247, 0.9);
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -104,7 +104,7 @@ div.tech-list {
 .jumbotron {
   width: 100% !important;
   height: 150px;
-  background-color: #1a8cff;
+  background-color: #5daaf7;
 }
 
 /* Footer */
@@ -178,7 +178,7 @@ div.detail-row {
   left: -1.3em;
   top: 50%;
   margin-top: -1.3em;
-  background: #1a8cff;
+  background: #5daaf7;
   height: 2.5em;
   width: 2.5em;
   line-height: 2em;
@@ -200,7 +200,7 @@ div.detail-row {
   margin: 0px;
   padding: 0px;
   width: 100% !important;
-  background-color: #1a8cff;
+  background-color: #5daaf7;
   color: white;
 }
 
@@ -221,5 +221,5 @@ div.detail-row {
 }
 
 #homeBtn:hover {
-  background-color: #1a8cff;
+  background-color: #1a8dff;
 }

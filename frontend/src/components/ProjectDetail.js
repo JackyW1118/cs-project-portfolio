@@ -90,6 +90,8 @@ const ProjectDetail = ({ match }) => {
             href={project.project_link}
             className="btn btn-primary mr-3"
             style={{ color: "white" }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Live Demo
           </a>
@@ -97,6 +99,8 @@ const ProjectDetail = ({ match }) => {
             href={project.github_url}
             className="btn"
             style={{ color: "white", backgroundColor: "black" }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="fa fa-github mr-2" />
             Github Code
