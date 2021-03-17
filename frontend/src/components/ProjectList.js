@@ -6,7 +6,7 @@ const ProjectList = ({ projects }) => {
   const renderedProjects = projects.map((proj) => {
     if (proj.visible) {
       return (
-        <Link to={`/${proj.slug}`} className="col-md-6 mb-3">
+        <Link to={`/project/${proj.slug}`} className="col-md-6 mb-3">
           <Project proj={proj} />
         </Link>
       );

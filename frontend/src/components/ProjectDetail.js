@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Redirect } from "react-router";
 import Hero from "./Hero";
 import ProjectFeatureList from "./ProjectFeatureList";
 import CodeSampleList from "./CodeSampleList";
 import ReturnHomeBtn from "./ReturnHomeBtn";
 
 const ProjectDetail = ({ match }) => {
+  //initalzie state stores the project object
   const [project, setProject] = useState({
     key_features: "",
     technical_details: "",
   });
 
+  /*initalzie state stores the key feature object, state is updated using
+  a call back passed into the ProjectFeatureList component*/
   const [keyFeatures, setKeyFeatures] = useState([]);
 
   useEffect(() => {
-    const getProject = async () => {
-      const { data } = await axios.get(
-        `/api/project-list/?slug=${match.params.slug}`
-      );
-      setProject(data[0]);
-    };
     getProject();
   }, []);
 
+  //make a get requet to retrieve the project with slug that is the path of current url
+  const getProject = async () => {
+    const { data } = await axios.get(
+      `/api/project-list/?slug=${match.params.slug}`
+    );
+    //set state to empty object if request returns empty array
+    if (data.length === 0) {
+      setProject({});
+    }
+    //else set it to the first match because there will only be one match
+    else setProject(data[0]);
+  };
+
+  //render key feature list
   const renderedKeyFeatures = keyFeatures.map(({ feature_title }) => {
     return (
       <li className="mb-2">
@@ -31,13 +43,23 @@ const ProjectDetail = ({ match }) => {
     );
   });
 
-  const renderedTechs = project.technical_details.split("/").map((tech) => {
-    return (
-      <span className="badge badge-pill badge-primary mr-2 mb-1">{tech}</span>
-    );
-  });
+  //render the tech badges
+  const renderedTechs =
+    //return null if state project is empty
+    Object.keys(project).length === 0
+      ? null
+      : project.technical_details.split("/").map((tech) => {
+          return (
+            <span className="badge badge-pill badge-primary mr-2 mb-1">
+              {tech}
+            </span>
+          );
+        });
 
-  return (
+  //if state project is empty object redirect to 404 page
+  return Object.keys(project).length === 0 ? (
+    <Redirect to="/404" />
+  ) : (
     <React.Fragment>
       <ReturnHomeBtn />
       <div className="row">

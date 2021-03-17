@@ -22,10 +22,6 @@ ol {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-ol ol {
-  margin: 0 0 0 2em; /* Add some left margin for inner lists */
-}
-
 /* Person Card */
 .card-wrap {
   margin-top: 50px;
@@ -78,6 +74,10 @@ ol ol {
 .proj-card:hover .proj-short {
   visibility: visible;
   opacity: 1;
+}
+
+.proj-card:hover .tech-list {
+  display: none;
 }
 
 div.tech-list {
@@ -222,4 +222,9 @@ div.detail-row {
 
 #homeBtn:hover {
   background-color: #1a8dff;
+}
+
+/*NotFound*/
+.not-found {
+  height: 90vh;
 }

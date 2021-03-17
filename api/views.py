@@ -47,7 +47,7 @@ def api_overview(request):
 def project_list(request):
     queryset = models.Project.objects.all()
     slug = request.query_params.get('slug', None)
-
+    #filter project by slug if provided
     if (slug):
         queryset = queryset.filter(slug=slug)
     serializer = serializers.ProjectSerializer(queryset, many=True)
