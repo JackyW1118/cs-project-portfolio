@@ -1,9 +1,16 @@
+body {
+  font-family: Renner\*, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  background-image: url("https://cs-portfolio-wang.s3-us-west-1.amazonaws.com/profile/O9FG5Q0.jpg");
+}
+
 hr {
   border: 0;
   clear: both;
   display: block;
   width: 100%;
-  background-color: #5daaf7;
+  background-color: #343a40;
   height: 1px;
 }
 
@@ -49,26 +56,25 @@ ol {
 
 /* Project */
 .proj-card {
-  height: 300px !important;
+  height: 320px !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   cursor: pointer;
+  border-radius: 0 !important;
+  background-color: white;
+  color: black;
 }
 
 .inner-card {
+  position: relative;
   height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   cursor: pointer;
-}
-
-.proj-outer-card {
-  background-color: #5daaf7;
-  color: white;
 }
 
 .proj-card:hover .proj-short {
@@ -76,24 +82,28 @@ ol {
   opacity: 1;
 }
 
-.proj-card:hover .tech-list {
-  display: none;
-}
-
-div.tech-list {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 .proj-short {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(93, 170, 247, 0.9);
+  height: 100%;
+  background: rgba(52, 58, 64, 0.9);
   color: #fff;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
+}
+
+.name-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(52, 58, 64, 0.5);
+  color: #fff;
+  text-align: center;
 }
 
 .name-badge {
@@ -103,8 +113,7 @@ div.tech-list {
 /* Nav Footer*/
 .jumbotron {
   width: 100% !important;
-  height: 150px;
-  background-color: #5daaf7;
+  background-color: #343a40;
 }
 
 /* Footer */
@@ -122,7 +131,7 @@ div.footer {
   z-index: 99;
   font-size: 18px;
   outline: none;
-  background-color: #5daaf7;
+  background-color: #343a40;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -131,7 +140,7 @@ div.footer {
 }
 
 #upBtn:hover {
-  background-color: #1a8cff;
+  background-color: #343a40;
 }
 
 /*ProjectDetail */
@@ -178,7 +187,7 @@ div.detail-row {
   left: -1.3em;
   top: 50%;
   margin-top: -1.3em;
-  background: #5daaf7;
+  background: #343a40;
   height: 2.5em;
   width: 2.5em;
   line-height: 2em;
@@ -200,7 +209,7 @@ div.detail-row {
   margin: 0px;
   padding: 0px;
   width: 100% !important;
-  background-color: #5daaf7;
+  background-color: #343a40;
   color: white;
 }
 
@@ -212,7 +221,7 @@ div.detail-row {
   z-index: 99;
   font-size: 18px;
   outline: none;
-  background-color: #5daaf7;
+  background-color: #343a40;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -221,10 +230,40 @@ div.detail-row {
 }
 
 #homeBtn:hover {
-  background-color: #1a8dff;
+  background-color: #343a40;
 }
 
 /*NotFound*/
 .not-found {
   height: 90vh;
+}
+
+/* NavBar */
+@media (min-width: 991px) {
+  nav.navbar .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+  }
+
+  nav.navbar .navbar-brand {
+    padding-right: 90px;
+    margin-left: 60px;
+  }
+
+  .nav-item {
+    margin-right: 40px;
+  }
+
+  .navbar-toggler {
+  }
+}
+/* MyInfo */
+.jumbotron {
+  color: white;
+}
+
+.myinfo-container {
+  width: 70%;
 }

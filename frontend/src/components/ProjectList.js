@@ -1,13 +1,16 @@
 import React from "react";
-import Project from "./Project";
+import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
 
 const ProjectList = ({ projects }) => {
   const renderedProjects = projects.map((proj) => {
-    if (proj.visible) {
+    //get project object from the Home component passed as prop
+    if (proj.visible && proj.featured) {
       return (
-        <Link to={`/project/${proj.slug}`} className="col-md-6 mb-3">
-          <Project proj={proj} />
+        //dynamic linking use slug as path
+        <Link to={`/project/${proj.slug}`} className="col-md-4 mb-3">
+          {/* pass proj from Home component to Project component to render the cards on home */}
+          <ProjectCard proj={proj} />
         </Link>
       );
     }

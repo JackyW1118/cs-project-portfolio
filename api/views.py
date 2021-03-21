@@ -50,7 +50,7 @@ def project_list(request):
     #filter project by slug if provided
     if (slug):
         queryset = queryset.filter(slug=slug)
-    serializer = serializers.ProjectSerializer(queryset, many=True)
+    serializer = serializers.ProjectSerializer(queryset.order_by('order'), many=True)
     return Response(serializer.data)
 
 

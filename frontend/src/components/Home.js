@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import ProjectList from "./ProjectList";
-import Hero from "./Hero";
+import MyInfo from "./MyInfo";
 import axios from "axios";
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
+  const [myInfo, setMyInfo] = useState({ tech_stack: "" });
 
   useEffect(() => {
-    const getProjects = async () => {
-      const { data } = await axios.get("/api/project-list/");
-      setProjects(data);
-    };
-    getProjects();
+    getObj("/api/myinfo", setMyInfo);
+    getObj("/api/project-list/", setProjects);
   }, []);
 
+  const getObj = async (url, setter) => {
+    const { data } = await axios.get(url);
+    setter(data);
+  };
+
   return (
-    <div style={{ backgroundColor: "#f2f2f2" }} className="row">
+    <div style={{ backgroundColor: "#343a40" }} className="row">
       <div className="col mb-5">
         <div className="row">
-          <Hero />
+          <MyInfo myInfo={myInfo} />
         </div>
-        <div className="row">
-          <div class="col-md-3 mb-3 float-up">
-            <Card />
-          </div>
-          <div class="col-md">
+        <div className="row justify-content-center">
+          <div class="col-md-10">
             <ProjectList projects={projects} />
           </div>
         </div>

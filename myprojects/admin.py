@@ -15,7 +15,7 @@ class CodeSampleInline(admin.TabularInline):
     extra = 0
 
 class ProjectAdmin(admin.ModelAdmin):
-    inlines = [ProjectFeatureListInline, CodeSampleInline, ProjectUpdateInline]
+    inlines = [ProjectFeatureListInline, CodeSampleInline]
 
 # Register your models here.
 admin.site.site_header = "Portfolio Editor"

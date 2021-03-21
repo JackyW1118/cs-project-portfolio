@@ -5,14 +5,15 @@ from django.core.exceptions import ValidationError
 
 # each instance is a project displayed in a new page
 class Project(models.Model):
+    featured = models.BooleanField(default=False)
     visible = models.BooleanField(default=True)
     feature_list_visible = models.BooleanField(default=True)
     code_sample_visible = models.BooleanField(default=True)
+    order = models.IntegerField(default=0)
     title = models.CharField(max_length=100)
-    date_posted = models.DateTimeField(default=timezone.now, null=True)
     short_description = models.TextField(blank=True)
+    project_type = models.CharField(default="Web Application", max_length=50)
     description = models.TextField(verbose_name="Description")
-    key_features = models.TextField(verbose_name="Key Features (split by /)", null=True)
     project_link = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
@@ -27,12 +28,6 @@ class Project(models.Model):
         if self.slug is None or self.slug == "":
             self.slug = f"{self.title}".replace(' ','').lower()
         super(Project, self).save(*args, **kwargs)
-
-    def tech_as_list(self):
-        return f"{self.technical_details}".split('\n')
-
-    def features_as_list(self):
-        return f"{self.key_features}".split('\n')
 
 # each instance is a daily update stored under devlopment log
 class ProjectUpdate(models.Model):
