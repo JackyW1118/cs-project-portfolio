@@ -4,7 +4,6 @@ import { Redirect } from "react-router";
 import Hero from "./Hero";
 import ProjectFeatureList from "./ProjectFeatureList";
 import CodeSampleList from "./CodeSampleList";
-import ReturnHomeBtn from "./ReturnHomeBtn";
 
 const ProjectDetail = ({ match }) => {
   //initalzie state stores the project object
@@ -61,7 +60,6 @@ const ProjectDetail = ({ match }) => {
     <Redirect to="/404" />
   ) : (
     <React.Fragment>
-      <ReturnHomeBtn />
       <div className="row">
         <Hero project={project.title} />
       </div>
