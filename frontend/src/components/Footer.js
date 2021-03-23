@@ -31,12 +31,17 @@ const Footer = () => {
     };
   }, [currentPage]);
   return (
-    <div className="row align-items-center footer-row">
+    <div className="row align-items-center footer-row mt-5">
       <div class={`footer ${footerProp}`}>
         <div
           className={`d-flex justify-content-center footer-text-container ${currentBg}`}
         >
-          <p class="text-white mt-5 footer-text">© 2021 JackyWang.us</p>
+          <p class="text-white footer-text my-4 mr-5">
+            © {new Date().getFullYear()} {location.hostname}
+          </p>
+          <p class="text-muted footer-text my-4 ml-5">
+            Developed with <i class="fab fa-react fa-lg"></i> + django
+          </p>
         </div>
       </div>
     </div>
