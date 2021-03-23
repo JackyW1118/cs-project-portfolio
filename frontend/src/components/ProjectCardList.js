@@ -9,7 +9,7 @@ const ProjectCardList = ({ projects, showAll }) => {
       if (showAll || proj.featured) {
         return (
           //dynamic linking use slug as path
-          <Link to={`/project/${proj.slug}`} className="col-md-4 mb-3">
+          <Link to={`/projects/${proj.slug}`} className="col-md-4 mb-3">
             {/* pass proj from Home component to Project component to render the cards on home */}
             <ProjectCard proj={proj} />
           </Link>

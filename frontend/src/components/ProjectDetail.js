@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router";
-import Hero from "./Hero";
 import ProjectFeatureList from "./ProjectFeatureList";
 import CodeSampleList from "./CodeSampleList";
 
@@ -20,7 +19,7 @@ const ProjectDetail = ({ match }) => {
     getProject();
   }, []);
 
-  //make a get requet to retrieve the project with slug that is the path of current url
+  //make a get request to retrieve the project with slug that is the path of current url
   const getProject = async () => {
     const { data } = await axios.get(
       `/api/project-list/?slug=${match.params.slug}`
@@ -62,6 +61,7 @@ const ProjectDetail = ({ match }) => {
     <Redirect to="/404" />
   ) : (
     <>
+      <div className="other-bg" />
       <div className="container mb-3">
         <div className="proj-inner mt-3 d-flex flex-column">
           <h5 className="text-muted">{project.project_type}</h5>
@@ -88,7 +88,7 @@ const ProjectDetail = ({ match }) => {
               Github
             </a>
           </div>
-          <h3 className="text-muted text-white mt-5">
+          <h3 className="text-white mt-5">
             <i class="fa fa-link mr-2"></i>Feature Links
           </h3>
           <ol className="rounded-list mt-2">{renderedKeyFeatures}</ol>

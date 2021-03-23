@@ -1,13 +1,19 @@
 import React from "react";
 
 const ProjectCard = ({ proj }) => {
-  const renderedTechs = proj.technical_details.split("/").map((stack) => {
-    return (
-      <span className="badge badge-pill badge-secondary mr-2 mb-1">
-        {stack}
-      </span>
-    );
-  });
+  const renderedTechs = proj.technical_details
+    .split("/")
+    .map((stack, index) => {
+      if (index < 4) {
+        return (
+          <span className="lead">
+            <span className="badge badge-pill badge-secondary mr-2 mb-1">
+              {stack}
+            </span>
+          </span>
+        );
+      }
+    });
   return (
     <div className="card proj-card shadow border-0">
       <div

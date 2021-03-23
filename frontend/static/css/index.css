@@ -10,7 +10,7 @@ hr {
   clear: both;
   display: block;
   width: 100%;
-  background-color: #061324;
+  background-color: #b3d4ff;
   height: 1px;
 }
 
@@ -83,7 +83,7 @@ ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(52, 58, 64, 0.9);
+  background: rgb(0, 34, 77, 0.75);
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -268,26 +268,6 @@ div.detail-row {
   color: white;
 }
 
-/*returnHomeBtn*/
-#homeBtn {
-  position: fixed;
-  top: 20px;
-  left: 10px;
-  z-index: 99;
-  font-size: 18px;
-  outline: none;
-  background-color: #454d54;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border: none;
-  border-radius: 50%;
-}
-
-#homeBtn:hover {
-  background-color: #454d54;
-}
-
 /*NotFound*/
 .not-found {
   height: 90vh;
@@ -300,6 +280,20 @@ div.detail-row {
 
 .nav-footer-bg {
   background-color: #162840;
+}
+
+.other-bg {
+  background-image: url("https://cs-portfolio-wang.s3-us-west-1.amazonaws.com/backgrounds/other-top.svg");
+  background-repeat: no-repeat;
+  background-position: 55% -90px;
+  flex-grow: 0;
+  width: 100%;
+  height: 620px;
+  background-size: 1550px 620px;
+  position: fixed;
+  top: 60px;
+  z-index: -9999;
+  left: 0;
 }
 
 @media (min-width: 991px) {

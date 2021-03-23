@@ -16,6 +16,8 @@ const ProjectDisplay = () => {
 
   return (
     <div className="row my-3">
+      <div className="other-bg" />
+
       <div className="col-md-10 my-3 mx-auto">
         <h2 className="text-white">All Projects</h2>
       </div>

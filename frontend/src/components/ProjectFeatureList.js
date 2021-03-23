@@ -40,7 +40,7 @@ const ProjectFeatureList = ({ proj_pk, setKeyFeatures }) => {
   return (
     <div className="container">
       <div className="row mb-2">
-        <h3 className="my-3 text-muted ml-4">
+        <h3 className="my-3 text-light ml-4">
           <i class="fa fa-list-alt"></i> Features
         </h3>
       </div>
