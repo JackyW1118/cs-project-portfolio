@@ -15,9 +15,9 @@ const ProjectDisplay = () => {
   };
 
   return (
-    <div className="row">
+    <div className="row my-3">
       <div className="col-md-10 my-3 mx-auto">
-        <h2>All Projects</h2>
+        <h2 className="text-white">All Projects</h2>
       </div>
       <div className="col-md-10 mx-auto">
         <ProjectCardList projects={projects} showAll={true} />

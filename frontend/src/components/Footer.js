@@ -5,6 +5,8 @@ const Footer = () => {
   const [footerProp, setfooterProp] = useState("");
   //state to keep track of current url
   const [currentPage, setCurrentPage] = useState();
+  //state to keep track of color
+  const [currentBg, setCurrentBg] = useState("");
   useEffect(() => {
     //create a time interval
     const intervalID = setInterval(() => {
@@ -12,20 +14,29 @@ const Footer = () => {
       if (currentPage != location.href) {
         //add style to nav bar if location isnt home page
         if (location.pathname !== "/") {
-          setfooterProp("footer-bg");
+          setfooterProp("");
+          setCurrentBg("nav-footer-bg");
         } else {
-          setCurrentPage("");
+          setfooterProp("home-bg-bottom");
+          setCurrentBg("");
         }
         //update current page state
         setCurrentPage(location.href);
       }
     }, 50);
+
+    return () => {
+      //cancel previous interval when current page state is updated
+      clearInterval(intervalID);
+    };
   }, [currentPage]);
   return (
-    <div className="row align-items-center">
+    <div className="row align-items-center footer-row">
       <div class={`footer ${footerProp}`}>
-        <div className="col-md-12 text-center">
-          <p class="align-self-center text-white mt-5">© 2021 JackyWang.us</p>
+        <div
+          className={`d-flex justify-content-center footer-text-container ${currentBg}`}
+        >
+          <p class="text-white mt-5 footer-text">© 2021 JackyWang.us</p>
         </div>
       </div>
     </div>

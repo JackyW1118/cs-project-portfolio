@@ -12,14 +12,14 @@ const NavBar = () => {
       if (currentPage != location.href) {
         //add style to nav bar if location isnt home page
         if (location.pathname !== "/") {
-          setNavProp("bg-dark sticky-top");
+          setNavProp("nav-footer-bg sticky-top");
         } else {
-          setCurrentPage("");
+          setNavProp("");
         }
         //update current page state
         setCurrentPage(location.href);
       }
-    }, 50);
+    }, 100);
 
     //get all nav item
     const navItems = document.getElementsByClassName("nav-item");

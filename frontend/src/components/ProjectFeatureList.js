@@ -17,13 +17,14 @@ const ProjectFeatureList = ({ proj_pk, setKeyFeatures }) => {
 
   const renderedProjectFeatureList = features.map((feature) => {
     return (
-      <React.Fragment>
+      <>
+        <hr />
         <div className="row justify-content-center" id={feature.feature_title}>
-          <h4>{feature.feature_title}</h4>
+          <p className="text-white h3 my-3">{feature.feature_title}</p>
         </div>
         <div className="row">
           <div className="col-md-4">
-            <p className="p">{feature.feature_detail}</p>
+            <p className="p text-lead text-white">{feature.feature_detail}</p>
           </div>
           <div className="col-md-8">
             <img
@@ -33,17 +34,17 @@ const ProjectFeatureList = ({ proj_pk, setKeyFeatures }) => {
             />
           </div>
         </div>
-        <hr />
-      </React.Fragment>
+      </>
     );
   });
   return (
-    <div className="container-fluid" style={{ padding: "0" }}>
-      <div className="row justify-content-center feature-hero mb-2">
-        <h2 className="my-3">Feature List</h2>
+    <div className="container">
+      <div className="row mb-2">
+        <h3 className="my-3 text-muted ml-4">
+          <i class="fa fa-list-alt"></i> Features
+        </h3>
       </div>
-      <div className="row" style={{ width: "80%", margin: "auto" }}>
-        <hr />
+      <div className="row">
         <div className="col">{renderedProjectFeatureList}</div>
       </div>
     </div>

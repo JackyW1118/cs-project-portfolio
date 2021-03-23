@@ -17,12 +17,13 @@ const CodeSampleList = ({ proj_pk }) => {
 
   const renderedCodeSampleList = samples.map((sample) => {
     return (
-      <React.Fragment>
+      <>
+        <hr />
         <div className="row justify-content-center">
-          <h4>{sample.sample_name}</h4>
+          <p className="text-white h3 my-3">{sample.sample_name}</p>
         </div>
         <div className="row justify-content-center">
-          <p className="p">{sample.sample_text}</p>
+          <p className="p text-lead text-white">{sample.sample_text}</p>
         </div>
         <div className="row">
           <div className="col-md" id={sample.id}>
@@ -36,17 +37,17 @@ const CodeSampleList = ({ proj_pk }) => {
             />
           </div>
         </div>
-        <hr />
-      </React.Fragment>
+      </>
     );
   });
   return (
-    <div className="container-fluid" style={{ padding: "0" }}>
-      <div className="row justify-content-center feature-hero mb-2">
-        <h2 className="my-3">Code Samples</h2>
+    <div className="container">
+      <div className="row mb-2">
+        <h3 className="my-3 text-muted ml-4">
+          <i class="fa fa-code mr-2"></i>Code Samples
+        </h3>
       </div>
-      <div className="row" style={{ width: "80%", margin: "auto" }}>
-        <hr />
+      <div className="row">
         <div className="col">{renderedCodeSampleList}</div>
       </div>
     </div>

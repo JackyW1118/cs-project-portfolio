@@ -18,13 +18,8 @@ const Home = () => {
   };
 
   return (
-    <div className="row">
-      <img
-        src="https://cs-portfolio-wang.s3-us-west-1.amazonaws.com/profile/O9FG5Q0.jpg"
-        id="bg"
-        className="bg-home"
-        alt="bg"
-      ></img>
+    <div className="row home-row">
+      <div className="home-bg-top" />
       <div className="col mb-5">
         <div className="row">
           <MyInfo myInfo={myInfo} />

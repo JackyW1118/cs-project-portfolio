@@ -36,7 +36,7 @@ const ProjectDetail = ({ match }) => {
   //render key feature list
   const renderedKeyFeatures = keyFeatures.map(({ feature_title }) => {
     return (
-      <li className="mb-2">
+      <li className="mb-2" style={{ textAlign: "center" }}>
         <a href={`#${feature_title}`}>{feature_title}</a>
       </li>
     );
@@ -49,8 +49,10 @@ const ProjectDetail = ({ match }) => {
       ? null
       : project.technical_details.split("/").map((tech) => {
           return (
-            <span className="badge badge-pill badge-primary mr-2 mb-1">
-              {tech}
+            <span className="lead">
+              <span className="badge badge-pill badge-primary mr-2 mb-1">
+                {tech}
+              </span>
             </span>
           );
         });
@@ -59,92 +61,50 @@ const ProjectDetail = ({ match }) => {
   return Object.keys(project).length === 0 ? (
     <Redirect to="/404" />
   ) : (
-    <React.Fragment>
-      <div className="row">
-        <Hero project={project.title} />
-      </div>
-      <div
-        className="row justify-content-center detail-row"
-        style={{ width: "90%", margin: "auto" }}
-      >
-        <div className="col-md">
-          <div className="row">
-            <div className="col-md">
-              <h5>Details: </h5>
-              {project.description}
-            </div>
+    <>
+      <div className="container mb-3">
+        <div className="proj-inner mt-3 d-flex flex-column">
+          <h5 className="text-muted">{project.project_type}</h5>
+          <h2 className="text-white display-4">{project.title}</h2>
+          <p className="text-white lead">{project.description}</p>
+          <div className="d-flex flex-wrap">{renderedTechs}</div>
+          <div className="d-flex flex-wrap mt-4">
+            <a
+              class="btn btn-danger mr-2 text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.project_link}
+            >
+              <i class="fa fa-desktop mr-2"></i>
+              Live
+            </a>
+            <a
+              class="btn btn-secondary text-white bg-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.github_url}
+            >
+              <i class="fa fa-github mr-2"></i>
+              Github
+            </a>
           </div>
-          <div className="row my-5">
-            <div className="col-md">
-              <h5>Feature Links: </h5>
-              <ol className="rounded-list">{renderedKeyFeatures}</ol>
-            </div>
-          </div>
-          <div className="row mt-2">
-            <div className="col-md">
-              <h5>Technology Used: </h5>
-              <div
-                class="d-flex flex-wrap justify-content-center"
-                style={{ width: "70%", margin: "auto" }}
-              >
-                {renderedTechs}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md">
-          <div className="row">
-            <div className="col-md">
-              <img
-                className="img-main shadow p-3 mb-5 bg-white rounded"
-                src={project.front_image}
-                alt="img"
-              />
-            </div>
-          </div>
+          <h3 className="text-muted text-white mt-5">
+            <i class="fa fa-link mr-2"></i>Feature Links
+          </h3>
+          <ol className="rounded-list mt-2">{renderedKeyFeatures}</ol>
+          <img
+            class="img-main shadow mb-5"
+            alt="img"
+            src={project.front_image}
+          ></img>
         </div>
       </div>
-      <div className="row detail-row">
-        <div className="h5 col-md mb-5">
-          <a
-            href={project.project_link}
-            className="btn btn-primary mr-3"
-            style={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.github_url}
-            className="btn"
-            style={{ color: "white", backgroundColor: "black" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa fa-github mr-2" />
-            Github Code
-          </a>
-        </div>
-      </div>
-      <div className="row detail-row">
-        <div className="col" style={{ padding: "0" }}>
-          {project.feature_list_visible ? (
-            <ProjectFeatureList
-              proj_pk={project.id}
-              setKeyFeatures={setKeyFeatures}
-            />
-          ) : null}
-        </div>
-      </div>
-      <div className="row detail-row">
-        <div className="col" style={{ padding: "0" }}>
-          {project.code_sample_visible ? (
-            <CodeSampleList proj_pk={project.id} />
-          ) : null}
-        </div>
-      </div>
-    </React.Fragment>
+      <ProjectFeatureList
+        proj_pk={project.id}
+        setKeyFeatures={setKeyFeatures}
+      />
+      <CodeSampleList proj_pk={project.id} />
+    </>
   );
 };
 
