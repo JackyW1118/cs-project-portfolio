@@ -204,7 +204,7 @@ div.detail-row {
 }
 
 .rounded-list {
-  width: 30%;
+  width: 60%;
   margin-left: 20px;
 }
 
@@ -251,6 +251,10 @@ div.detail-row {
 @media (max-width: 991px) {
   .proj-inner {
     width: 100% !important;
+  }
+
+  .rounded-list {
+    width: 90% !important;
   }
 }
 

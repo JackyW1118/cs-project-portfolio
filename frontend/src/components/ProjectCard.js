@@ -4,7 +4,7 @@ const ProjectCard = ({ proj }) => {
   const renderedTechs = proj.technical_details
     .split("/")
     .map((stack, index) => {
-      if (index < 4) {
+      if (index < 3) {
         return (
           <span className="lead">
             <span className="badge badge-pill badge-secondary mr-2 mb-1">
