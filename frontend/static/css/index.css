@@ -289,11 +289,11 @@ div.detail-row {
 .other-bg {
   background-image: url("https://cs-portfolio-wang.s3-us-west-1.amazonaws.com/backgrounds/other-top.svg");
   background-repeat: no-repeat;
-  background-position: 55% -90px;
+  background-position: 55%;
   flex-grow: 0;
   width: 100%;
   height: 620px;
-  background-size: 1550px 620px;
+  background-size: 2550px 620px;
   position: fixed;
   top: 60px;
   z-index: -9999;
