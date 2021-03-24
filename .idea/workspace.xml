@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0411326c-dd30-4851-835e-79d0a40c07ec" name="Default Changelist" comment="react integration">
-      <change beforePath="$PROJECT_DIR$/frontend/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../djangoBlog/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/blog/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +255,7 @@
       <workItem from="1613001004690" duration="712000" />
       <workItem from="1614922884136" duration="848000" />
       <workItem from="1614925904365" duration="19416000" />
-      <workItem from="1615079159341" duration="41777000" />
+      <workItem from="1615079159341" duration="42372000" />
     </task>
     <task id="LOCAL-00001" summary="react integration">
       <created>1615016542041</created>
