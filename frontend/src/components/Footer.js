@@ -40,7 +40,7 @@ const Footer = () => {
             © {new Date().getFullYear()} {location.hostname}
           </p>
           <p class="text-muted footer-text my-4 ml-3">
-            Developed with <i class="fab fa-react fa-lg"></i> + django
+            Developed with <i class="fab fa-react fa-lg"></i> + Django
           </p>
         </div>
       </div>
