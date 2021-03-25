@@ -4,6 +4,8 @@
     <list default="true" id="0411326c-dd30-4851-835e-79d0a40c07ec" name="Default Changelist" comment="react integration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../djangoBlog/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../djangoBlog/blog/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +259,7 @@
       <workItem from="1613001004690" duration="712000" />
       <workItem from="1614922884136" duration="848000" />
       <workItem from="1614925904365" duration="19416000" />
-      <workItem from="1615079159341" duration="44814000" />
+      <workItem from="1615079159341" duration="48475000" />
     </task>
     <task id="LOCAL-00001" summary="react integration">
       <created>1615016542041</created>

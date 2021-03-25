@@ -8,10 +8,12 @@ const Home = () => {
   const [myInfo, setMyInfo] = useState({ tech_stack: "" });
 
   useEffect(() => {
+    //set the above two state
     getObj("/api/myinfo", setMyInfo);
     getObj("/api/project-list/", setProjects);
   }, []);
 
+  //function to get data from api and set the state with the data
   const getObj = async (url, setter) => {
     const { data } = await axios.get(url);
     setter(data);
