@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import useGET from "../hooks/useGET";
 
 const ProjectFeatureList = ({ proj_pk, setKeyFeatures }) => {
-  const [features, setFeatures] = useState([]);
+  const [features, setFeatures] = useGET([]);
 
+  //when proj_pk is passed to this component call setFeatures to update state
   useEffect(() => {
-    const getFeatures = async () => {
-      const { data } = await axios.get(
-        `/api/project-feature-list/?proj_pk=${proj_pk}`
-      );
-      setFeatures(data);
-      setKeyFeatures(data);
-    };
-    if (proj_pk) getFeatures();
+    if (proj_pk) {
+      setFeatures(`/api/project-feature-list/?proj_pk=${proj_pk}`);
+    }
   }, [proj_pk]);
+
+  /*
+  when the features state is updated with data, run the callback to 
+  pass features back to ProjectDetail to display the feature links
+  */
+  useEffect(() => {
+    if (features.length != 0) {
+      setKeyFeatures(features);
+    }
+  }, [features]);
 
   const renderedProjectFeatureList = features.map((feature) => {
     return (
