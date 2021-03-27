@@ -3,13 +3,11 @@ import ProjectCardList from "./ProjectCardList";
 import MyInfo from "./MyInfo";
 import useGET from "../hooks/useGET";
 
-const Home = () => {
+const Home = ({ myInfo }) => {
   const [projects, setProjects] = useGET([]);
-  const [myInfo, setMyInfo] = useGET({ tech_stack: "" });
 
   useEffect(() => {
     //set the above two state
-    setMyInfo("/api/myinfo");
     setProjects("/api/project-list/");
   }, []);
 
