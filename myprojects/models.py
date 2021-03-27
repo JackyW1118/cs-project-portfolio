@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 
+from ckeditor.fields import RichTextField
+
 # each instance is a project displayed in a new page
 class Project(models.Model):
     featured = models.BooleanField(default=False)
@@ -13,7 +15,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     short_description = models.TextField(blank=True)
     project_type = models.CharField(default="Web Application", max_length=50)
-    description = models.TextField(verbose_name="Description")
+    description = RichTextField()
     project_link = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
     front_image = models.ImageField(upload_to='proj_frontimages',verbose_name="Thumbnail")
@@ -61,8 +63,7 @@ def validate_only_one_instance(obj):
 
 class MyInformation(models.Model):
     name = models.CharField(max_length=20)
-    home_page_hero_text = models.TextField()
-    about_page_description = models.TextField()
+    about_page_description = RichTextField()
     phone_number = PhoneField()
     email = models.EmailField()
     current_role = models.CharField(max_length=50, null=True)
@@ -75,6 +76,9 @@ class MyInformation(models.Model):
 
     def clean(self):
         validate_only_one_instance(self)
+
+    def __str__(self):
+        return "My Information"
 
 class CodeSample(models.Model):
     sample_name = models.CharField(max_length=50)
