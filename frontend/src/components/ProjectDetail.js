@@ -3,6 +3,7 @@ import { Redirect } from "react-router";
 import ProjectFeatureList from "./ProjectFeatureList";
 import CodeSampleList from "./CodeSampleList";
 import useGET from "../hooks/useGET";
+import ReactHtmlParser from "react-html-parser";
 
 const ProjectDetail = ({ match }) => {
   /*
@@ -62,7 +63,9 @@ const ProjectDetail = ({ match }) => {
         <div className="proj-inner mt-3 d-flex flex-column">
           <h5 className="text-muted">{project.project_type}</h5>
           <h2 className="text-white display-4">{project.title}</h2>
-          <p className="text-white lead">{project.description}</p>
+          <div className="text-white lead">
+            {ReactHtmlParser(project.description)}
+          </div>
           <div className="d-flex flex-wrap">{renderedTechs}</div>
           <div className="d-flex flex-wrap mt-4">
             <a

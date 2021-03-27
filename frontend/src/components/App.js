@@ -29,7 +29,11 @@ const App = () => {
             <Route path="/projects" exact component={ProjectDisplay} />
             <Route path="/projects/:slug" exact component={ProjectDetail} />
             <Route path="/resume" exact component={ResumeDisplay} />
-            <Route path="/about" exact component={About} />
+            <Route
+              path="/about"
+              exact
+              render={() => <About myInfo={myInfo} />}
+            />
             <Route path="/404" exact component={NotFound} />
             <Route path="*" component={NotFound} />
           </Switch>

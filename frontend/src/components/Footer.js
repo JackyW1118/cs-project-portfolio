@@ -31,17 +31,19 @@ const Footer = () => {
     };
   }, [currentPage]);
   return (
-    <div className="row align-items-center footer-row mt-5">
-      <div class={`footer ${footerProp}`}>
-        <div
-          className={`d-flex justify-content-center footer-text-container ${currentBg}`}
-        >
-          <p class="text-white footer-text my-4 mr-3">
-            © {new Date().getFullYear()} {location.hostname}
-          </p>
-          <p class="text-muted footer-text my-4 ml-3">
-            Developed with <i class="fab fa-react fa-lg"></i> + Django
-          </p>
+    <div className="container-fluid">
+      <div className="row align-items-center footer-row mt-5">
+        <div class={`footer ${footerProp}`}>
+          <div
+            className={`d-flex justify-content-center footer-text-container ${currentBg}`}
+          >
+            <p class="text-white footer-text my-4 mr-3">
+              © {new Date().getFullYear()} {location.hostname}
+            </p>
+            <p class="text-muted footer-text my-4 ml-3">
+              Developed with <i class="fab fa-react fa-lg"></i> + Django
+            </p>
+          </div>
         </div>
       </div>
     </div>
