@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import Gist from "./Gist";
+import useGET from "../hooks/useGET";
 
 const CodeSampleList = ({ proj_pk }) => {
-  const [samples, setSamples] = useState([]);
+  const [samples, setSamples] = useGET([]);
 
   useEffect(() => {
-    const getSamples = async () => {
-      const { data } = await axios.get(
-        `/api/code-sample-list/?proj_pk=${proj_pk}`
-      );
-      setSamples(data);
-    };
-    if (proj_pk) getSamples();
+    if (proj_pk) setSamples(`/api/code-sample-list/?proj_pk=${proj_pk}`);
   }, [proj_pk]);
 
   const renderedCodeSampleList = samples.map((sample) => {

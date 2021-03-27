@@ -1,36 +1,32 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Redirect } from "react-router";
 import ProjectFeatureList from "./ProjectFeatureList";
 import CodeSampleList from "./CodeSampleList";
+import useGET from "../hooks/useGET";
 
 const ProjectDetail = ({ match }) => {
-  //initalzie state stores the project object
-  const [project, setProject] = useState({
+  /*
+  initalzie state stores the project object use custom hook useGET 
+  that makes a get request to the api 
+  setProject when called will make a GET request and stores the response
+  in project variable
+  */
+  const [project, setProject] = useGET({
     key_features: "",
     technical_details: "",
   });
 
-  /*initalzie state stores the key feature object, state is updated using
-  a call back passed into the ProjectFeatureList component*/
+  /*
+  initalzie state stores the key feature object, state is updated using
+  a call back passed into the ProjectFeatureList component
+  */
   const [keyFeatures, setKeyFeatures] = useState([]);
 
   useEffect(() => {
-    getProject();
+    //specify that
+    setProject(`/api/project-list/?slug=${match.params.slug}`, 0);
+    console.log(project);
   }, []);
-
-  //make a get request to retrieve the project with slug that is the path of current url
-  const getProject = async () => {
-    const { data } = await axios.get(
-      `/api/project-list/?slug=${match.params.slug}`
-    );
-    //set state to empty object if request returns empty array
-    if (data.length === 0) {
-      setProject({});
-    }
-    //else set it to the first match because there will only be one match
-    else setProject(data[0]);
-  };
 
   //render key feature list
   const renderedKeyFeatures = keyFeatures.map(({ feature_title }) => {
@@ -99,11 +95,15 @@ const ProjectDetail = ({ match }) => {
           ></img>
         </div>
       </div>
-      <ProjectFeatureList
-        proj_pk={project.id}
-        setKeyFeatures={setKeyFeatures}
-      />
-      <CodeSampleList proj_pk={project.id} />
+      {project.feature_list_visible ? (
+        <ProjectFeatureList
+          proj_pk={project.id}
+          setKeyFeatures={setKeyFeatures}
+        />
+      ) : null}
+      {project.code_sample_visible ? (
+        <CodeSampleList proj_pk={project.id} />
+      ) : null}
     </>
   );
 };

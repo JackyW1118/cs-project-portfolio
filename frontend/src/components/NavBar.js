@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const NavBar = () => {
+const NavBar = ({ myInfo }) => {
   //state to keep track  of current navbar style
   const [navProp, setNavProp] = useState("");
   //state to keep track of current url
@@ -64,17 +64,11 @@ const NavBar = () => {
             <a className="nav-item nav-link" href="/resume">
               Resume
             </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/JackyW1118"
-            >
+            <a className="nav-item nav-link" href={myInfo.github_url}>
               <i className="fa fa-github mr-1"></i>
               Github
             </a>
-            <a
-              className="nav-item nav-link"
-              href="https://www.linkedin.com/in/jiaqi-wang-9535321b1/"
-            >
+            <a className="nav-item nav-link" href={myInfo.linkedin_url}>
               <i className="fa fa-linkedin mr-1"></i>
               Linkedin
             </a>

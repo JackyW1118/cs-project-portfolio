@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ProjectCardList from "./ProjectCardList";
 import MyInfo from "./MyInfo";
-import axios from "axios";
+import useGET from "../hooks/useGET";
 
-const Home = () => {
-  const [projects, setProjects] = useState([]);
-  const [myInfo, setMyInfo] = useState({ tech_stack: "" });
+const Home = ({ myInfo }) => {
+  const [projects, setProjects] = useGET([]);
 
   useEffect(() => {
     //set the above two state
-    getObj("/api/myinfo", setMyInfo);
-    getObj("/api/project-list/", setProjects);
+    setProjects("/api/project-list/");
   }, []);
-
-  //function to get data from api and set the state with the data
-  const getObj = async (url, setter) => {
-    const { data } = await axios.get(url);
-    setter(data);
-  };
 
   return (
     <div className="row home-row">
