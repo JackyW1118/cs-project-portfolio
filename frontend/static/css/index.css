@@ -5,6 +5,31 @@ body {
   background-color: rgb(0, 34, 77, 0.95);
 }
 
+/* 
+Extra small devices (portrait phones, less than 544px) 
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (max-width: 544px) {
+  h1 {
+    font-size: 2rem;
+  } /*1rem = 16px*/
+  h2 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 0.8rem !important;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
+
 hr {
   border: 0;
   clear: both;
@@ -245,7 +270,7 @@ div.detail-row {
   width: 65%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .proj-inner {
     width: 100% !important;
   }
