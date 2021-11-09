@@ -10,7 +10,7 @@ const useGET = (defaultObj) => {
   const getResponse = async (query, index = null) => {
     const { data } = await axios.get(query);
     if (data.length === 0) {
-      setResponse({});
+      setResponse([]);
     } else if (index != null) {
       setResponse(data[index]);
     } else setResponse(data);

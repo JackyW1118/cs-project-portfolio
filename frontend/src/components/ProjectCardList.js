@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
 
 const ProjectCardList = ({ projects, showAll }) => {
+  console.log(projects)
   const renderedProjects = projects.map((proj) => {
     //get project object from the Home component passed as prop
     if (proj.visible) {
